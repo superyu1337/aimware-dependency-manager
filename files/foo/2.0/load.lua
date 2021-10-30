@@ -1,1 +1,3 @@
-print("foo v2.0")
+return function()
+    print('foo bar v2')
+end
