@@ -1,1 +1,3 @@
-print("test-lua v1.0")
+return function()
+    print('hey bro')
+end
