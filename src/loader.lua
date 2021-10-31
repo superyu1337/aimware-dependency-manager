@@ -16,8 +16,8 @@ return function(dependency_name, version, verbose)
             error('Unrecoverable Error - Could not find dependency "' .. dependency_name .. '" with version "' .. version .. '" on the server!')
         else
             if verbose then print('Downloaded and cached dependency "' .. dependency_name .. '" with version "' .. version .. '".') end
-            local c = file.Read(path);
-            return loadstring(c)();
+            file.Write(path, content);
+            return loadstring(content)();
         end
     else
         if verbose then print('Found cached dependency "' .. dependency_name .. '" with version "' .. version .. '".') end
