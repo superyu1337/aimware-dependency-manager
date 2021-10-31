@@ -7,7 +7,7 @@ file.Read = function(path)
 end
 
 return function(dependency_name, version, verbose)
-    local path = '.cache/adp/' .. dependency_name .. '/' .. version .. '/load.lua';
+    local path = '.cache/adm/' .. dependency_name .. '/' .. version .. '/load.lua';
     local link = 'https://raw.githubusercontent.com/superyu1337/aimware-dependency-manager/main/files/' .. dependency_name .. '/' .. version .. '/load.lua';
 
     if not pcall(file.Read, path) then
