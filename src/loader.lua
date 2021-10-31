@@ -7,8 +7,8 @@ file.Read = function(path)
 end
 
 return function(dependency_name, version, verbose)
-    local path = '.cache/dependencies/' .. dependency_name .. '/' .. version .. '/load.lua';
-    local link = 'https://raw.githubusercontent.com/superyu1337/aw-scripts/main/files/' .. dependency_name .. '/' .. version .. '/load.lua';
+    local path = '.cache/adp/' .. dependency_name .. '/' .. version .. '/load.lua';
+    local link = 'https://raw.githubusercontent.com/superyu1337/aimware-dependency-manager/main/files/' .. dependency_name .. '/' .. version .. '/load.lua';
 
     if not pcall(file.Read, path) then
         local content = httpGet(link);
