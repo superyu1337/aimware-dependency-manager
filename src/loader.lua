@@ -13,11 +13,11 @@ return function(dependency_name, version, verbose)
         else
             if verbose then print('Downloaded and cached dependency "' .. dependency_name .. '" with version "' .. version .. '".') end
             fWrite(path, content);
-            return loadstring(content)();
+            return load(content, dependency_name .. " v" .. version)();
         end
     else
         if verbose then print('Found cached dependency "' .. dependency_name .. '" with version "' .. version .. '".') end
-        local c = fRead(path);
-        return loadstring(c)();
+        local content = fRead(path);
+        return load(content, dependency_name .. " v" .. version)();
     end
 end
